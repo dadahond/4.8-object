@@ -553,84 +553,78 @@ const teams = [{
         id: 20,
     },
 ];
-console.log(teams);
-// 1 MANAGER
+// console.log(teams); barchasini chiqarish
 
-// function askAboutClub(question) {
-//     if (question === "manager") {
-//         return teams.map((team) => {
-//             return {
-//                 teamName: team.name,
-//                 managerName: team.manager,
-//                 orin: team.id,
-//             };
-//         });
-//     }
-// }
-// const question = "manager";
-// const result = askAboutClub(question);
-// console.log(result);
+// Klublar haqida kerakli malumotni olish uchun kommentlarni birma bir ochib korish mumkin.
 
-// 2 TOP SCORER
-
-// function askAboutClub(question) {
-//     if (question === "top_scorer") {
-//         return teams.map((team) => {
-//             return { teamName: team.name, topScorer: team.top_scorer, orin: team.id };
-//         });
-//     }
-// }
+const question = "manager";
 // const question = "top_scorer";
-// const result = askAboutClub(question);
-// console.log(result);
-
-// 3 STADIUM
-
-// function askAboutClub(question) {
-//     if (question === "stadium") {
-//         return teams.map((team) => {
-//             return { teamName: team.name, stadium: team.stadium, orin: team.id };
-//         });
-//     }
-// }
 // const question = "stadium";
-// const result = askAboutClub(question);
-// console.log(result);
-
-// 4 TRIUMPHS
-
-// function askAboutClub(question) {
-//     if (question === "trophies") {
-//         return teams.map((team) => {
-//             return { teamName: team.name, kuboglari: team.trophies, orin: team.id };
-//         });
-//     }
-// }
 // const question = "trophies";
-// const result = askAboutClub(question);
-// console.log(result);
-
-// 5 FOUNDED
-// function askAboutClub(question) {
-//     if (question === "founded") {
-//         return teams.map((team) => {
-//             return { teamName: team.name, tashkilTopganYil: team.founded };
-//         });
-//     }
-// }
 // const question = "founded";
-// const result = askAboutClub(question);
-// console.log(result);
-
-// 5 RIVALRIES
-
-// function askAboutClub(question) {
-//     if (question === "rivalries") {
-//         return teams.map((team) => {
-//             return { teamName: team.name, asosiyRaqiblari: team.rivalries };
-//         });
-//     }
-// }
 // const question = "rivalries";
-// const result = askAboutClub(question);
-// console.log(result);
+
+function askAboutClub(question) {
+    switch (question) {
+        case "manager":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    managerName: team.manager,
+                    idRaqami: team.id,
+                };
+            });
+    }
+    switch (question) {
+        case "top_scorer":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    topScorer: team.top_scorer,
+                    idRaqami: team.id,
+                };
+            });
+    }
+    switch (question) {
+        case "stadium":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    Stadioni: team.stadium,
+                    idRaqami: team.id,
+                };
+            });
+    }
+    switch (question) {
+        case "trophies":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    Kuboglari: team.trophies,
+                    idRaqami: team.id,
+                };
+            });
+    }
+    switch (question) {
+        case "founded":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    tashTopYili: team.founded,
+                    idRaqami: team.id,
+                };
+            });
+    }
+    switch (question) {
+        case "rivalries":
+            return teams.map((team) => {
+                return {
+                    klubNomi: team.name,
+                    asosiyRaqiblari: team.rivalries,
+                    idRaqami: team.id,
+                };
+            });
+    }
+}
+
+console.log(askAboutClub(question));
