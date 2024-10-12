@@ -595,6 +595,7 @@ function askAboutClub(question) {
                 };
             });
     }
+
     switch (question) {
         case "trophies":
             return teams.map((team) => {
